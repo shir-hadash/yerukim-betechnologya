@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Rubik', Arial, sans-serif;
+  direction: rtl;
+  background: url('../assets/images/chalkboard-bg.png') center center/cover no-repeat fixed;
+}
+
+/* ניווט עליון */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(36, 92, 36, 0.97);
+  border-radius: 0 0 18px 18px;
+  padding: 0.7em 2.5em;
+  box-shadow: 0 2px 12px #0003;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2.5em;
+  max-width: 100vw;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.logo-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #0004;
+  margin-left: 0.5em;
+}
+.site-title {
+  font-family: 'Amatic SC', 'Shadows Into Light', cursive;
+  font-size: 1.7em;
+  color: #fffde4;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px #000, 0 0 8px #fff8;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1em;
+}
+
+.nav-btn {
+  background: #fffde4;
+  color: #245c24;
+  border: none;
+  border-radius: 18px;
+  padding: 0.7em 1.5em;
+  font-size: 1.1em;
+  font-family: 'Rubik', Arial, sans-serif;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #0002;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn:hover, .cta-btn:hover {
+  background: #b9f6ca;
+  color: #1b3b1b;
+  transform: scale(1.07) rotate(-1deg);
+  box-shadow: 0 4px 16px #0003;
+}
+
+/* כרטיס מרכזי רחב */
+.chalkboard {
+  max-width: 100vw;
+  width: 1300px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #245c24 90%, #2e7d32 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  border: 8px solid #eee8aa;
+  position: relative;
+  overflow: hidden;
+  padding: 32px 24px 24px 24px;
+  transition: transform 0.4s cubic-bezier(.23,1.02,.58,.99), box-shadow 0.4s;
+}
+
+.chalkboard:hover {
+  transform: translateY(-18px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+  z-index: 10;
+}
+
+/* כותרת מרכזית ומרשימה */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.main-title {
+  font-family: 'Amatic SC', 'Shadows Into Light', cursive;
+  color: #fff;
+  font-size: 5rem;
+  text-shadow: 3px 3px 12px #000, 0 0 12px #fff8;
+  margin-bottom: 0.2em;
+  letter-spacing: 3px;
+  filter: blur(0.2px);
+  text-align: center;
+  animation: chalkFlicker 2.5s infinite alternate;
+}
+
+@keyframes chalkFlicker {
+  0%   { opacity: 1; text-shadow: 3px 3px 12px #000, 0 0 12px #fff8;}
+  10%  { opacity: 0.85; text-shadow: 2px 2px 8px #000, 0 0 8px #fff8;}
+  20%  { opacity: 1; }
+  22%  { opacity: 0.7; }
+  24%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.subtitle {
+  font-family: 'Tinos', serif;
+  color: #fffde4;
+  font-size: 1.3rem;
+  margin-bottom: 1.9rem;
+  text-shadow: 1px 1px 6px #0008;
+  text-align: center;
+}
+
+/* אזור ברוכים הבאים */
+main .welcome {
+  background: rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 2em 1.5em;
+  box-shadow: 0 2px 12px #0002;
+  margin-bottom: 2em;
+  animation: fadeInUp 1.2s cubic-bezier(.23,1.02,.58,.99);
+  text-align: center;           /* מרכז את כל התוכן */
+  font-family: 'Tinos', serif;  /* הופך את כל הטקסט ל-Tinos */
+}
+
+main .welcome h2 {
+  font-family: 'Amatic SC', cursive;
+  color: #fff;
+  font-size: 2.9rem;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 6px #0008;
+}
+
+main .welcome p {
+  color: #fffde4;
+  font-size: 1.8rem;
+  margin-bottom: 1.5em;
+  line-height: 1.7;
+  text-shadow: 0 1px 4px #0006;
+  font-family: 'Tinos', serif; /* כאן */
+  text-align: center;          /* מרכז גם את הפסקה */
+}
+
+/* כפתור קריאה לפעולה */
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #b9f6ca 60%, #fffde4 100%);
+  color: #245c24;
+  border: none;
+  border-radius: 22px;
+  padding: 0.9em 2em;
+  font-size: 1.2em;
+  font-family: 'Rubik', Arial, sans-serif;
+  font-weight: bold;
+  box-shadow: 0 4px 16px #0002;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.3s;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  animation: bounceIn 1.2s 0.5s both;
+}
+
+/* אפקט גיר */
+.chalk-effect {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: url('https://svgshare.com/i/15kK.svg') repeat;
+  opacity: 0.13;
+  mix-blend-mode: lighten;
+  animation: chalkMove 18s linear infinite alternate;
+  z-index: 0;
+}
+
+/* תחתית */
+footer {
+  text-align: center;
+  color: #fffde4;
+  font-size: 1em;
+  margin-top: 1.5em;
+  text-shadow: 0 1px 4px #0006;
+}
+
+/* אנימציות */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.7);}
+  60% { transform: scale(1.1);}
+  80% { transform: scale(0.95);}
+  100% { transform: scale(1);}
+}
+@keyframes chalkMove {
+  0% { background-position: 0 0;}
+  100% { background-position: 120px 60px;}
+}
+@keyframes floatCard {
+  0%   { transform: translateY(0px);}
+  100% { transform: translateY(-18px);}
+}
+/* רספונסיביות */
+@media (max-width: 1100px) {
+  .chalkboard {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 18px 2vw 18px 2vw;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 0.7em;
+    padding: 0.7em 0.5em;
+  }
+  .main-title { font-size: 2.1rem;}
+  main .welcome h2

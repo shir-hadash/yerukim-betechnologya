@@ -164,6 +164,81 @@ main .welcome p {
   text-align: center;          /* מרכז גם את הפסקה */
 }
 
+/* ...existing code... */
+.mini-chalkboards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin: 48px 0;
+}
+
+.mini-chalkboard {
+  background: #263826;
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 28px 24px;
+  width: 340px;
+  max-width: 90vw;
+  text-align: center;
+  position: relative;
+  font-family: 'Tinos', serif;
+  border: 2px solid #b7e283;
+  opacity: 0;
+  transform: translateX(0);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.mini-chalkboard h3 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.6em;
+  margin-bottom: 14px;
+  color: #b7e283;
+  text-shadow: 1px 1px 2px #1a2a1a;
+}
+
+.mini-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 22px;
+  background: #b7e283;
+  color: #263826;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: inherit;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.mini-btn:hover {
+  background: #7ec850;
+  color: #fff;
+}
+
+/* אנימציה */
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(80vw);}
+  to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-80vw);}
+  to   { opacity: 1; transform: translateX(0);}
+}
+.mini-chalkboard.from-right {
+  animation-name: slideFromRight;
+}
+.mini-chalkboard.from-left {
+  animation-name: slideFromLeft;
+}
+/* ...existing code... */
+.mini-chalkboard:nth-child(1) { animation-delay: 0.2s; }
+.mini-chalkboard:nth-child(2) { animation-delay: 0.7s; }
+.mini-chalkboard:nth-child(3) { animation-delay: 1.2s; }
+/* ...existing code... */
+
 /* כפתור קריאה לפעולה */
 .cta-btn {
   display: inline-block;
@@ -196,6 +271,7 @@ main .welcome p {
   animation: chalkMove 18s linear infinite alternate;
   z-index: 0;
 }
+
 
 /* תחתית */
 footer {
